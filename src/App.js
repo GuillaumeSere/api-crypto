@@ -5,7 +5,7 @@ import Coin from "./Coin";
 
 
 function App() {
-    const [coins, setCoins] = useState([]);
+    const [coins, setCoins] = useState([1]);
     const [search, setSearch] = useState('');
 
     useEffect(() => {
