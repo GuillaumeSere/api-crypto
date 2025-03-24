@@ -32,17 +32,19 @@ function App() {
             </form>
         </div>
         {filteredCoins.map((coin) => {
+            if (!coin) return null;
+            
             return (
                 <Coin
                     key={coin.id}
-                    name={coin.name}
-                    image={coin.image}
-                    price={coin.current_price}
-                    symbol={coin.symbol}
-                    marketcap={coin.market_cap}
-                    priceChange={coin.price_change_percentage_24h}
-                    volume={coin.total_volume}
-                 />
+                    name={coin.name || ''}
+                    image={coin.image || ''}
+                    price={coin.current_price || 0}
+                    symbol={coin.symbol || ''}
+                    marketcap={coin.market_cap || 0}
+                    priceChange={coin.price_change_percentage_24h || 0}
+                    volume={coin.total_volume || 0}
+                />
             );
         })}
     </div>
