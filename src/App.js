@@ -29,25 +29,36 @@ function App() {
         <div className="coin-search">
             <h1 className="coin-text">Cours des CRYPTOS</h1>
             <form>
-                <input type="text" placeholder="Search" className="coin-input" onChange={handleChange}/>
+                <input 
+                    type="text" 
+                    placeholder="Search" 
+                    className="coin-input" 
+                    onChange={handleChange}
+                />
             </form>
         </div>
-        {filteredCoins.map((coin) => {
-            if (!coin) return null;
-            
-            return (
-                <Coin
-                    key={coin.id}
-                    name={coin.name || ''}
-                    image={coin.image || ''}
-                    price={coin.current_price || 0}
-                    symbol={coin.symbol || ''}
-                    marketcap={coin.market_cap || 0}
-                    priceChange={coin.price_change_percentage_24h || 0}
-                    volume={coin.total_volume || 0}
-                />
-            );
-        })}
+        {filteredCoins.length === 0 ? (
+            <div className="no-results">
+                <p>Aucune crypto-monnaie trouvée pour "{search}"</p>
+            </div>
+        ) : (
+            filteredCoins.map((coin) => {
+                if (!coin) return null;
+                
+                return (
+                    <Coin
+                        key={coin.id}
+                        name={coin.name || ''}
+                        image={coin.image || ''}
+                        price={coin.current_price || 0}
+                        symbol={coin.symbol || ''}
+                        marketcap={coin.market_cap || 0}
+                        priceChange={coin.price_change_percentage_24h || 0}
+                        volume={coin.total_volume || 0}
+                    />
+                );
+            })
+        )}
         <ScrollToTop />
     </div>
   );

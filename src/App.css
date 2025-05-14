@@ -87,3 +87,16 @@
 .scroll-to-top:active {
     transform: translateY(0);
 }
+
+.no-results {
+    text-align: center;
+    padding: 2rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+}
+
+.no-results p {
+    color: #c90f0f;
+    font-size: 1.1rem;
+    margin: 0;
+}
