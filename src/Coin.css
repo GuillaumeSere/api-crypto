@@ -1,6 +1,10 @@
 .coin-container{
+    margin: 0 auto;
+    width: 100%;
     display: flex;
     justify-content: center;
+    background-color: rgba(0, 0, 0, 0.702);
+    backdrop-filter: blur(10px);
 }
 
 .coin-row{
@@ -77,7 +81,6 @@
     .coin-container{
         display: flex;
         justify-content: center;
-        background: white;
     }
     .coin-row{
         width: 190px;

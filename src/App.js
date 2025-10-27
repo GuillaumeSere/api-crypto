@@ -26,6 +26,9 @@ function App() {
 
   return (
     <div className="coin-app">
+           <video autoPlay loop muted playsInline className="background-video">
+                <source src="/bitcoin.mp4" type="video/mp4" />
+            </video>
         <div className="coin-search">
             <h1 className="coin-text">Cours des CRYPTOS</h1>
             <form>
